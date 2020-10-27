@@ -1,0 +1,48 @@
+{% extends "base.html"%}
+
+
+{%block content%}
+
+<section class="container d-flex row justify-content-center ml-auto mr-auto">
+  <h1 class="text-center col-12">Demandes</h1>
+  <form method="POST">
+    {{form.hidden_tag()}}
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-danger" role="alert">
+          {{messages[0]}}
+        </div>
+      {%endif%}
+    {%endwith%}
+    <div class="form-group">
+      {{form.request(class="form-control", placeholder="Type de demande" )}}
+      {%for error in form.request.errors%}
+      <p style="color: red;">{{error}}</p>
+      {%endfor%}
+    </div>
+    <div class="form-group">
+      {{form.societyName(class="form-control", placeholder="Nom de société" )}}
+      {%for error in form.societyName.errors%}
+      <p style="color: red;">{{error}}</p>
+      {%endfor%}
+    </div>
+    <div class="form-group">
+      {{form.siret(class="form-control", placeholder="Siret de société" )}}
+      {%for error in form.societyName.errors%}
+      <p style="color: red;">{{error}}</p>
+      {%endfor%}
+    </div>
+    <div class="jumbotron">
+      <h1 class="display-4">Vos documents</h1>
+      <p class="lead">Veuillez nous faires parvenir les documents suivant :</p>
+      <hr class="my-4">
+      <p>Carte d'identité</p>
+      {{form.file(class="col-11")}}
+    </div>
+    <div class="form-group">
+      {{form.submit(class="btn btn-primary col-11")}}
+    </div>
+    </form>
+</section>
+
+{%endblock%}

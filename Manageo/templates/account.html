@@ -5,7 +5,20 @@
 
 <section class="container d-flex row justify-content-center ml-auto mr-auto">
     <h1 class="text-center col-12">Votre compte</h1>
-    <p>Bonjour {{first_name}} {{last_name}}</p>
+    <p>Bonjour {{first_name}} {{last_name}} {{admin}} </p>
+</section>
+
+<section class="container d-flex row justify-content-center ml-auto mr-auto">
+    <h2 class="col-12">Vos demandes</h2>   
+    {% for demand in demands%}
+        <ul class="col-12">
+            <li>{{demand.log_category}}</li>
+            <li>{{demand.log_status}}</li>
+            <li>{{demand.log_society_name}}</li>
+            <li>{{demand.log_siret}}</li>
+            <li>{{demand.log_date}}</li>
+        </ul>
+    {% endfor %}
 </section>
 
 {%endblock%}
