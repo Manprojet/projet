@@ -1,0 +1,45 @@
+{% extends "index.html"%}
+
+
+{%block login%}
+
+<section class="d-flex row justify-content-center align-items-center login">
+    <form method="POST" class="dflex col-6 justify-content-center">
+      <div class="col-12 cross text-right">
+        <a href="{{url_for('main.index')}}"><i class="far fa-times-circle"></i></a>
+      </div>
+      <div class="dflex row justify-content-center" style="margin-bottom: 30px;">
+        <a class="brand" href="{{url_for('main.index')}}"><img class="logo" src="{{url_for('static', filename = 'img/423315597-logo-2017-09-13T130053995Z.png')}}" alt="logo">anageo<span style="color: #5870b1;">.fr</span></a>
+      </div>
+      <p>Déjà membre? Nous sommes ravis de vous revoir !</p>
+      {{form.hidden_tag()}}
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="alert alert-danger" role="alert">
+            {{messages[0]}}
+          </div>
+        {%endif%}
+      {%endwith%}
+      <div class="form-group">
+        {{form.email(class="form-control", placeholder="Email" )}}
+        {%for error in form.email.errors%}
+        <p style="color: red;">{{error}}</p>
+        {%endfor%}
+      </div>
+      <div class="form-group">
+        {{form.password(class="form-control", placeholder="Mot de passe" )}}
+        {%for error in form.password.errors%}
+        <p style="color: red;">{{error}}</p>
+        {%endfor%}
+      </div>
+      <div class="form-group">
+        {{form.remember}} {{form.remember.label}}
+      </div>
+      <div class="dflex row justify-content-center">
+        {{form.submit(class="btn btn-success col-4 ml-auto mr-auto")}}
+      </div>
+      <p class="col-12 infos">Conformément à notre politique de confidentialité, vous acceptez que vos coordonnées soient utilisées pour devenir membre du site.</p>
+      </form>
+</section>
+
+{%endblock%}

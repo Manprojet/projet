@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manageo.fr|RGPD</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <nav class="sticky-top nav">
+      <div class="col-12 navtop row">
+        <div class="row col-6" style="padding-left: 100px;">
+          <a href="{{url_for('main.index')}}"><img src="{{url_for('static', filename='img/logo-manageo-fr.png')}}" style="height: 60px; width: auto;" alt="logo manageo"></a>
+        </div>
+        <div class="col-6 dflex justify-content-end align-items-center row">
+          {% if not current_user.is_authenticated %}
+          <a href="{{url_for('auth.login')}}" class="connexion"><span style="font-size: 25px;margin-right: 10px;"><i class="fas fa-user"></i></span> Connexion</a>
+          {%endif%}
+          
+          {% if current_user.is_authenticated %}
+          <a href="{{url_for('auth.logout')}}" class="connexion"><span style="font-size: 25px;margin-right: 10px;"><i class="fas fa-user"></i></span> Déconnexion</a>
+          {%endif%}  
+        </div> 
+            
+      </div>
+      <div class="col-12 navbot">
+          <ul class="dflex row justify-content-center align-items-center">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{url_for('main.index')}}" style="border-right: 1px solid white;">Accueil<span class="sr-only">(current)</span></a>
+            </li>
+
+            {% if current_user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('main.profile')}}"" style="border-right: 1px solid white;">Profil</a>
+            </li>
+            {% endif %}
+
+            {% if not current_user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('auth.signup')}}" style="border-right: 1px solid white;">S'inscrire</a>
+            </li>
+            {% endif %}
+
+            {% if not current_user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('auth.login')}}">Se connecter</a>
+            </li>
+            {% endif %}
+
+            {% if current_user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('auth.logout')}}">Se deconnecter</a>
+            </li>
+            {% endif %}
+
+          </ul>
+      </div>
+       
+    </nav>
+    
+    {%block content%}
+    {%endblock%}
+
+
+    <footer class="row col-12 sticky-bottom">
+      <div class="dflex col-12 row justify-content-center" style="margin-bottom: 30px;">
+        <a class="brand" href="{{url_for('main.index')}}"><img class="logo" src="{{url_for('static', filename = 'img/423315597-logo-2017-09-13T130053995Z.png')}}" alt="logo">anageo<span style="color: #5870b1;">.fr</span></a>
+      </div>
+      <div class="socialMedia col-12 row dflex justify-content-center align-items-center">
+        <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://youtube.com""><i class="fab fa-youtube"></i></a>
+        <a href="https://twitter.com""><i class="fab fa-twitter"></i></a>
+        <a href="https://Linkedin.com""><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <div class="col-12 navbot" style="background-color: transparent; margin-top: 30px;">
+        <ul class="dflex row justify-content-center align-items-center">
+          <li class="nav-item active">
+            <a class="nav-link" href="{{url_for('main.index')}}" style="border-right: 1px solid white;">Accueil<span class="sr-only">(current)</span></a>
+          </li>
+
+          {% if current_user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('main.profile')}}" style="border-right: 1px solid white;">Profile</a>
+          </li>
+          {% endif %}
+
+          {% if not current_user.is_authenticated %}
+          <li class="nav-item">
+              <a class="nav-link" href="{{url_for('auth.signup')}}" style="border-right: 1px solid white;">S'inscrire</a>
+          </li>
+          {% endif %}
+
+          {% if not current_user.is_authenticated %}
+          <li class="nav-item">
+              <a class="nav-link" href="{{url_for('auth.login')}}">Se connecter</a>
+          </li>
+          {% endif %}
+
+          {% if current_user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('main.requests')}}" style="border-right: 1px solid white;">Effectuer une demande</a>
+          </li>
+          {% endif %}
+
+          {% if current_user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('auth.logout')}}">Se deconnecter</a>
+          </li>
+          {% endif %}
+
+        </ul>
+
+    </div>
+    </footer>
+
+
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>

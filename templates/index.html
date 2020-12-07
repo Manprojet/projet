@@ -1,0 +1,72 @@
+
+{% extends "base.html"%}
+
+
+{%block content%}
+    <section class="row col-12">
+        <header class="row col-12">
+            <div class="background col-12"></div>
+            <div class="colorBack col-12 d-flex row justify-content-center align-items-center">
+                <div class="d-flex row justify-content-center align-items-center heading">
+                    <h1 class="col-12 text-center">Vos demandes RGPD en quelques clics<h1>
+                    <h2 class="col-12 text-center">Dans le but de simplifier vos démarches nous mettons à votre disposition un outil simple pour traiter vos demandes</h2>
+                </div>     
+            </div>
+        </header>
+        <div class="logoBox d-flex justify-content-around row">
+            <div class="iconbox col-4">
+                <div>
+                    <div class="col-12 text-center">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>            
+                    <p class="col-12 text-center">Les respects de vos données</p>
+                </div>
+            </div>
+            <div class="iconbox col-4">
+                <div>
+                    <div class="col-12 text-center">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <p class="col-12 text-center">Procédure rapide</p>   
+                </div>       
+            </div>
+            <div class="iconbox col-4">
+                <div>
+                    <div class="col-12 text-center">
+                        <i class="fas fa-user-check"></i>
+                    </div>     
+                    <p class="col-12 text-center">Procédure simple</p>
+                </div>
+            </div>
+        </div>
+        <div class="rgpd container">
+            <h3 class="col-12 text-center">Qu'est ce que le RGPD?</h3>
+            <p>Entré en vigueur le 25 mai 2018, 2 ans après l’adoption du texte, le RGPD encadre juridiquement la collecte et 
+            le traitement des données personnelles sur le territoire de l’Union Européenne. Ce règlement fait suite à la Loi française
+             Informatique et Libertés de 1978. L’objectif est d’uniformiser et de renforcer la réglementation autour de l’utilisation des données 
+             personnelles des professionnels dans l’ensemble des pays européens. Selon la CNIL, une « donnée personnelle » correspond à «
+              toute information se rapportant à une personne physique identifiée ou identifiable ».
+
+                Dans un monde toujours plus connecté et digitalisé, il est nécessaire d’instaurer un cadre juridique précis et strict afin 
+                que chaque donnée soit utilisée à bon escient et protégée. L’objectif est de rassurer l’internaute dans son utilisation du web 
+                afin qu’il n’ait de craintes quant au traitement de ses données personnelles. Le RGPD permet donc aux entreprises de développer 
+                leurs activités numériques au sein de l’Union Européenne tout en s’assurant de la confiance des utilisateurs.</p>
+        </div>
+        <div class="news col-12 d-flex row align-items-center">
+            <h3 class="col-12 text-center">Manageo dans la presse</h3>
+            <div class="newsBox col-12 row dflex align-items-center justify-content-around">
+                <a href="https://www.lefigaro.fr/"><img src="{{url_for('static', filename = 'img/5a1863b33a18271ae9cd6371.png')}}" alt="logo figaro"></a>
+                <a href="https://www.elle.fr/"><img style="height: 80px" src="{{url_for('static', filename = 'img/kisspng-elle-magazine-logo-instyle-times-journal-5b162fe70abd77.312824461528180711044.png')}}" alt="logo elle"></a>
+                <a href="https://www.lesechos.fr/"><img style="height: 100px" src="{{url_for('static', filename = 'img/les-echos-logo-png-transparent.png')}}" alt="logo les echos "></a>
+                <a href="https://www.journaldunet.com/"><img src="{{url_for('static', filename = 'img/jdn.png')}}" alt="logo le jdn "></a>
+                <a href="https://www.francetvinfo.fr/"><img style="height: 60px" src="{{url_for('static', filename = 'img/unnamed.png')}}" alt="logo franceinfo"></a>
+
+            </div>
+        </div>
+    {%block login%}
+
+    {%endblock%}
+
+    </section>
+{%endblock%}
+

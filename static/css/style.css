@@ -1,0 +1,283 @@
+
+/**{
+    font-family: 'Noto Sans', sans-serif;
+}*/
+
+/* GENERAL*/
+
+
+.row{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #F2F2F2;
+    color: #d3d3d3;
+}
+
+section{
+    margin: 0;
+    min-height: 80vh;
+}
+
+
+
+ul li{
+    list-style: none;
+}
+
+a{
+    color: white;
+    text-decoration: none !important;
+}
+
+label{
+    color: black;
+}
+
+
+/* BASE*/
+
+.nav{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 10px;
+}
+
+.brand{
+    font-size: 28px;
+}
+
+.brand:hover{
+    color : #d3d3d3;
+}
+
+.connexion{
+    font-size: 20px;
+}
+
+.navtop{
+    background-color: #8196cf;
+    padding: 10px 40px 10px 10px;
+    margin: 0;
+}
+
+.navbot{
+    background-color: #5870b1;
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+}
+
+
+.navbot ul{
+    margin: 0;
+}
+.nav-link{
+    padding: 0 8px;
+}
+
+
+
+footer{
+    background-color: #1f1f1f;
+    padding: 40px 40px !important;
+}
+
+
+.socialMedia i {
+    font-size: 30px;
+    padding: 0 15px;
+}
+
+/* INDEX*/
+
+
+
+.background{
+    background: url(../img/campaign-creators-gMsnXqILjp4-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 450px;
+}
+
+.colorBack{
+    position: absolute;
+    background-color: rgba(43, 102, 150, 0.95);
+    height: 450px;
+}
+
+.heading{
+    color: white;
+}
+
+.heading h1{
+    font-size: 35px;
+}
+
+.heading h2{
+    font-size: 25px;
+}
+
+
+.logoBox{
+    padding: 80px 20px;
+    background-color: rgb(50, 61, 75);
+    width: 100%;
+}
+
+.logoBox i{
+    font-size: 45px;
+    height: 90px;
+    width: 90px;
+    border: 2px solid white;
+    border-radius: 50%;
+    line-height: 90px;
+    margin-bottom: 40px;
+    color: #8196cf;
+}
+
+.logoBox p{
+    font-size: 20px;
+}
+
+
+.rgpd{
+    padding: 60px 0px;
+}
+
+.rgpd h3{
+    color:  #5870b1;
+    margin-bottom: 40px;
+    font-size: 30px;
+}
+
+.rgpd p{
+    color:  #495057;
+    font-size: 20px;
+    text-align: justify;
+}
+
+
+.news{
+    padding: 50px;
+    background-color: rgb(50, 61, 75);
+}
+
+
+.news h3{
+    color: #8196cf;
+    margin-bottom: 40px;
+}
+
+.news img{
+    height: 40px;
+    width: auto;
+    filter: grayscale(100%);
+}
+
+.news img:hover{
+    filter: grayscale(0%);
+    transform: scale(1.01);
+    transition-duration: 0.25s;
+}
+
+
+
+/* LOGIN/SIGNUP*/
+
+
+form{
+    color: white;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+}
+
+.login{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(87, 87, 87, 0.3);
+    backdrop-filter: blur(4px);
+}
+
+
+
+#email, #password, #password_confirm, #last_name, #first_name,  #phone{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    padding-left: 0;
+}
+
+label{
+    color: #495057;;
+}
+
+.infos{
+    margin-top: 30px;
+    font-size: 12px;
+    color: white;
+}
+
+.cross{
+    padding: 0;
+}
+
+.cross i{
+    font-size: 40px;
+}
+
+.cross i:hover{
+    transform: scale(1.05);
+    transition-duration: .5s;
+    color: #5870b1;
+}
+
+
+/* BASEACCOUNT*/
+
+.navSide{
+    background-color:  rgb(50, 61, 75);
+}
+
+.navSide ul{
+    height: 100%;
+}
+
+.navSide ul li{
+    padding: 15px 0;
+    font-size: 18px;
+}
+
+.navSide ul li:hover{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+
+/*DEMANDS*/
+
+.bs-tooltip-auto[x-placement^=bottom] .arrow::before,
+.bs-tooltip-bottom .arrow::before {
+  border-bottom-color: #f00; /* Red */
+}
+
+.historique{
+    padding: 100px 0;
+}
+
+.demands{
+    padding: 10px;
+    background-color: #F2F2F2;
+    margin: 5px;
+    border-radius: 5px;
+    color:  #495057;
+}
+

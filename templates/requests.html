@@ -1,0 +1,84 @@
+{% extends "accountBase.html"%}
+
+
+{%block info%}
+<style>
+  input::placeholder{
+    color:rgb(77, 77, 77) !important;
+  }
+
+</style>
+
+<section class="request d-flex row justify-content-center container col-10" style="background: url(../static/img/couleur.jpg); background-size: cover; background-position: center;">
+  <div class="col-9" style="padding: 10px 10px; margin: 100px 0 20px 0;"> 
+    <h1 class="text-center col-12" style="background-color: #8196cf; border-radius: 5px; margin-bottom: 20px; padding: 10px;">Effectuer une demande</h1>
+    <div class="row">
+      <form method="POST" enctype="multipart/form-data" class="col-12 row" style="padding:0;">
+        {{form.hidden_tag()}}
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="alert alert-danger col-12 text-center" role="alert">
+              {{messages[0]}}
+            </div>
+          {%endif%}
+        {%endwith%}
+        <div class="col-10">
+          <div class="form-group col-11 row">
+            
+            {{form.request(class="form-control col-10", style="background-color:rgba(255,255,255,0.3);", placeholder="Type de demande")}}
+            {%for error in form.request.errors%}
+            <p style="color: red;">{{error}}</p>
+            {%endfor%}
+          </div>
+          <div class="form-group col-11 row">
+            {{form.societyName(class="form-control col-10", style="margin:10px 0;background-color:rgba(255,255,255,0.3);", placeholder="Nom de société" )}}
+            {%for error in form.societyName.errors%}
+            <p style="color: red;">{{error}}</p>
+            {%endfor%}
+          </div>
+          <div class="form-group row d-flex justify-content-between col-11">
+            {{form.siren(class="form-control col-10", placeholder="Siren de société",style="background-color:rgba(255,255,255,0.3);" )}}
+            <div class="col-2 d-flex row justify-content-center">
+              <a class="btn btn-success red-tooltip" data-toggle="tooltip" data-placement="right" title="Le numéro siren correspond aux 9 premiers chiffres du numéro siret">
+                ?
+              </a>
+            </div>
+            {%for error in form.societyName.errors%}
+            <p style="color: red;">{{error}}</p>
+            {%endfor%}
+          </div>
+          <div class="jumbotron col-11" style="margin-top: 10px ;background-color:transparent; border: 1px solid white; ">
+            <h1 class="display-4">Vos documents</h1>
+            <p class="lead">Veuillez nous faires parvenir les documents suivant :</p>
+            <hr class="my-4">
+            <p>Carte d'identité</p>
+            {{form.file(class="col-11")}}
+          </div>
+        </div>
+        <div class="col-2 flex-column d-flex justify-content-around" style="padding: 0;">
+          <div class="d-flex align-items-center justify-content-center" style="height: 150px;font-size: 45px; border: 1px solid white; border-radius: 3%; background-color: rgba(255,255,255,0.3); color: #5870b1"><i class="fas fa-bolt"></i></div>
+          <div class="d-flex align-items-center justify-content-center" style="height: 150px;font-size: 45px; border: 1px solid white; border-radius: 3%; background-color: rgba(255,255,255,0.3); color: #5870b1"><i class="fas fa-user-check"></i></div>
+          <div class="d-flex align-items-center justify-content-center" style="height: 150px;font-size: 45px; border: 1px solid white; border-radius: 3%; background-color: rgba(255,255,255,0.3); color: #5870b1"><i class="fas fa-balance-scale"></i></div>
+        </div>
+        <div class="form-group col-10 row d-flex justify-content-center" style="margin-bottom: 100px;">
+          {{form.submit(class="btn btn-success", style="width: 150px")}}
+        </div>
+
+        </form>
+        
+    </div>
+  </div>
+</div>  
+  
+  
+    
+</section>
+
+
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip()
+    
+  })
+</script>
+{%endblock%}

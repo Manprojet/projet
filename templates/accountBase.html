@@ -1,0 +1,29 @@
+{% extends "base.html"%}
+
+
+{%block content%}
+
+<section class="row" id="sectionProfile">
+    <nav class="navSide col-2">
+        <ul class="container d-flex flex-column justify-content-center">
+            <a href="{{url_for('main.profile')}}"><li class="text-center">Vos informations</li></a>
+            <a href="{{url_for('main.userDemands')}}"><li class="text-center">Vos demandes</li></a>
+            <a href="{{url_for('main.requests')}}"><li class="text-center">Effectuer une demande</li></a>
+            <a href="{{url_for('main.index')}}"><li class="text-center">Accueil</li></a>
+            <a href="{{url_for('auth.logout')}}"><li class="text-center">Déconnexion</li></a>
+        </ul>
+    </nav>
+    <div class="background" style="height: 100%;">
+        
+    </div>
+
+    {%block info%}
+    
+    {%endblock%}
+
+</section>
+
+
+{%endblock%}
+
+

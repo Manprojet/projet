@@ -1,0 +1,58 @@
+{% extends "accountBase.html"%}
+
+
+{%block info%}
+
+<div class="container row col-10 historique" style="background: url(../static/img/couleur.jpg); background-size: cover; background-position: center;">
+    <div class="container d-flex row justify-content-center col-12">
+        <h2 class="col-12 text-center align-self-center">Vos demandes en attente</h2>
+            {%if demandsLen > 0%}
+                {%for demand in demands%}
+                <div class="dflex row align-items-center justify-content-center col-12 demands">
+                    <p class="text-center">demande n°{{demand.log_id}}</p>
+                    <ul class="col-12 row">
+                        <li class="col-3 text-center align-self-center">Categorie: {{demand.log_category}}</li>
+                        <li class="col-3 text-center align-self-center">Société : {{demand.log_society_name}}</li>
+                        <li class="col-3 text-center align-self-center">Siret: {{demand.log_siret}}</li>
+                        <li class="col-3 text-center align-self-center">Le : {{demand.log_date}}</li>
+                    </ul>
+                </div>       
+                {% endfor %}
+            {%endif%}
+        
+            {% if demandsLen == 0 %} 
+            <div class="alert alert-danger align-self-center" role="alert">
+                Vous n'avez pas de demandes en attente
+            </div>
+            {%endif%}  
+    </div>
+
+    <div class="container d-flex row justify-content-center col-12" style="margin-top: 100px;">
+        <h2 class="col-12 text-center align-self-center">Vos demandes traitées</h2> 
+        {%if oldDemandsLen > 0%}
+            {%for demand in oldDemands%}
+            <div class="dflex row align-items-center justify-content-center col-12 demands">
+                <p class="text-center">demande n°{{demand.log_id}}</p>
+                <ul class="col-12 row">
+                    <li class="col-3 text-center align-self-center">Categorie: {{demand.log_category}}</li>
+                    <li class="col-3 text-center align-self-center">Société : {{demand.log_society_name}}</li>
+                    <li class="col-3 text-center align-self-center">Siret: {{demand.log_siret}}</li>
+                    <li class="col-3 text-center align-self-center">Le : {{demand.log_date}}</li>
+                </ul>
+            </div>     
+            {% endfor %}
+        {%endif%}
+
+        {% if oldDemandsLen == 0 %} 
+            <div class="alert alert-danger align-self-center" role="alert">
+                Vous n'avez pas de demandes cloturées
+            </div>
+        {%endif%}       
+    </div>
+</div> 
+
+{%endblock%}
+
+
+
+
